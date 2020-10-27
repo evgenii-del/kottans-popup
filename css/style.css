@@ -3,3 +3,53 @@ body, * {
     padding: 0;
     box-sizing: border-box;
 }
+
+a {
+    text-decoration: none;
+    color: #a5a5a5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    padding: 10px;
+}
+
+.nav__items {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav__item {
+    padding-left: 15px;
+}
+
+.nav__item a {
+    padding-left: 5px;
+}
+
+.nav__icon {
+    width: 40px;
+    height: 40px;
+}
+
+.nav__button img {
+    width: 15px;
+    height: 15px;
+}
+
+.nav__bell img {
+    width: 17px;
+    height: 17px;
+}
+
+.nav__avatar img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
