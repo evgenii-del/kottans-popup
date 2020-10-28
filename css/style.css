@@ -6,7 +6,7 @@ body, * {
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: #757575;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -40,18 +40,18 @@ ul {
     margin-left: 7px;
 }
 
-.nav__item span,
-.nav__item a {
+.nav__item .link {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 100%;
     padding: 10px;
+    border-radius: 50%;
     font-size: 13px;
 }
 
-.nav__item.nav__avatar a {
+.nav__avatar .link {
     padding: 6px;
 }
 
@@ -59,61 +59,49 @@ ul {
     position: relative;
 }
 
-.nav__button span,
-.nav__bell a,
-.nav__avatar a {
-    border-radius: 50%;
-}
-
 .nav__link {
     position: relative;
 }
 
-.nav__link > a::after {
+.nav__link > .link::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 2px;
     bottom: 3px;
     left: 0;
-    background-color: #000000;
+    background-color: #757575;;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
 }
 
-.nav__link > a:hover::after {
+.nav__link .link:hover::after {
     visibility: visible;
     transform: scaleX(1);
 }
 
-.nav__button span:hover,
-.nav__avatar a:hover {
+.nav__button .link:hover,
+.nav__avatar .link:hover {
     background-color: rgba(60, 64, 67, 0.08);
     transition: 0.3s;
 }
 
-.nav__bell a:hover {
+.nav__bell .link:hover {
     background-color: rgba(60, 64, 67, 0.08);
     transition: 0.3s;
-    -webkit-animation: ring 0.6s ease;
     animation: ring 0.6s ease;
-    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }
 
-.nav__button .nav__img {
-    display: flex;
-    align-items: center;
-    width: 16px;
-    height: 16px;
-}
-
+.nav__button .nav__img,
 .nav__bell .nav__img {
     display: flex;
+    border-radius: 50%;
     align-items: center;
     width: 18px;
     height: 18px;
+
 }
 
 .nav__avatar .nav__img {
@@ -163,29 +151,20 @@ input[id="popup_show"]:checked ~ .popup {
 }
 
 .popup__items {
-    position: relative;
-    padding: 15px 0 0 10px;
-}
-
-.popup__first:after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    right: 115px;
-    transform: rotate(45deg);
-    top: -7px;
-    background-color: #ffffff;
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
 }
 
 .popup__item {
-    display: inline-block;
-    width: 100px;
+    width: calc(100% / 3);
     height: 100px;
-    vertical-align: top;
     margin-top: 15px;
+}
+
+.popup__item:hover {
+    background-color: #eeeeee;
+    transition: 0.6s;
 }
 
 .popup__item a {
@@ -212,9 +191,10 @@ input[id="popup_show"]:checked ~ .popup {
 .popup__more {
     display: block;
     text-align: center;
-    padding: 5px;
+    padding: 8px;
     background-color: #eeeeee;
     margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .popup__more:hover {
@@ -224,7 +204,7 @@ input[id="popup_show"]:checked ~ .popup {
 .popup__second {
     display: none;
     margin-top: 35px;
-    padding-top: 30px;
+    padding: 25px 0;
     position: relative;
 }
 
@@ -243,7 +223,7 @@ input[id="popup_show"]:checked ~ .popup {
 }
 
 input[id="more"]:checked ~ .popup__second {
-    display: block;
+    display: flex;
 }
 
 input[id="more"]:checked ~ .popup__more {
@@ -256,26 +236,20 @@ input[id="more"]:checked ~ .popup__more {
     }
     30% {
         transform: rotate(10deg);
-
     }
     40% {
         transform: rotate(-10deg);
-
     }
     50% {
         transform: rotate(-20deg);
-
     }
     65% {
         transform: rotate(-15deg);
-
     }
     85% {
         transform: rotate(-5deg);
-
     }
     100% {
         transform: rotate(0deg);
-
     }
 }
