@@ -155,7 +155,7 @@ input[id="popup_show"]:checked ~ .popup {
     min-width: 335px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 2px 6px 2px rgba(60, 64, 67, .15);
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
     width: 100%;
     background: #fff;
     max-height: 515px;
@@ -167,7 +167,7 @@ input[id="popup_show"]:checked ~ .popup {
     padding: 15px 0 0 10px;
 }
 
-.popup__items:after {
+.popup__first:after {
     content: "";
     width: 10px;
     height: 10px;
